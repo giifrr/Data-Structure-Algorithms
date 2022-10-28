@@ -1,2 +1,2 @@
 # Data-Structure-Algorithms
-This is a implement code from data structure and algorithms course. This code using C++ programming language
+This is an implemented code from data structure and algorithms course. This code uses C++ programming language
