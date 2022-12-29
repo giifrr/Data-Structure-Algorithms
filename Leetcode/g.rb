@@ -1,20 +1,28 @@
-def busy_student(start_time, end_time, query_time)
-  n = start_time.size
-  res = 0
+def two_out_of_three(nums1, nums2, nums3)
+  temp = Array.new(101, 0)
 
-  for i in (0...n)
-    range_time = (start_time[i] - end_time[i]).abs
-    if range_time >= query_time || start_time[i] == query_time || end_time[i] == query_time
-      res += 1
+  for value in nums1.uniq do
+    temp[value] += 1
+  end
+
+  for value in nums2.uniq do
+    temp[value] += 1
+  end
+
+  for value in nums3.uniq do
+    temp[value] += 1
+  end
+
+  res = []
+
+  for i in (0...101) do
+    if temp[i] > 1
+      res << i
     end
   end
 
   res
 end
 
-
-start_time = [1,2,3]
-end_time =  [3,2,7]
-query_time = 4
-
-p busy_student(start_time, end_time, query_time)
+nums1 = [1,1,3,2]; nums2 = [2,3]; nums3 = [3]
+puts two_out_of_three(nums1, nums2, nums3)
